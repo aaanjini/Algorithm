@@ -1,13 +1,10 @@
-function solution(n)
-    {
-        let answer = 0;
-        let str = n.toString();
-        let str_split = str.split('');
+function solution(n){
+    let answer = 0;    
+    let num = n.toString().split('');
+    
+    for(let i = 0; i < num.length; i++){
+      answer += parseInt(num[i]);
+    };
 
-        for(let i=0; i<str_split.length; i++){
-            answer += parseInt(str_split[i]);
-            console.log(answer)
-        }
-
-        return answer;
-    }
+    return answer;
+}

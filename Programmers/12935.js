@@ -1,10 +1,7 @@
-function solution(n) {
-    let answer = 0;    
-    let num = Math.sqrt(n)  
-    
-    if(Number.isInteger(num) == false){
-        return -1;
-    }else{
-        return Math.pow(num+1,2);
-    }
+function solution(arr) {
+    arr.splice(arr.indexOf(Math.min(...arr)),1);
+    if(arr.length<1){
+        return[-1]
+    };
+    return arr;
 }

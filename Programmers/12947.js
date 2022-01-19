@@ -5,11 +5,11 @@ function solution(x) {
 
     for(let i=0; i<str.length; i++){
         num += parseInt(str[i]);          
-    };
+    }
     if(x % num == 0){
         return answer = true;
     }else{
         return answer = false;
-    };
+    }
     
 }

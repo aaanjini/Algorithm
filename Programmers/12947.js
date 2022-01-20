@@ -1,15 +1,16 @@
 function solution(x) {
-    let answer = true;    
-    let num = 0;
-    let str = x.toString().split('');
-
-    for(let i=0; i<str.length; i++){
-        num += parseInt(str[i]);          
-    }
-    if(x % num == 0){
-        return answer = true;
+    let answer = true;
+    let split = x.toString().split('');
+    let sum = 0;
+    
+    for(let i = 0; i < split.length; i++){        
+        sum += parseInt(split[i]);        
+    }  
+    
+    if(x % sum !== 0){
+        return false;
     }else{
-        return answer = false;
-    }
+        return answer; 
+    }   
     
 }

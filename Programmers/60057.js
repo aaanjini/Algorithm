@@ -1,6 +1,5 @@
 function solution(s) {    
     let strings = [];
-    let answer = 0;
 
 	//문자열 길이 1인 경우
     if (s.length === 1) return 1;

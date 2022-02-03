@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer="YES";
+                let only_str = (s).match(/[a-zA-Z]/g).join('');
+                let reverse = only_str.split("").reverse().join(""); 
+
+                console.log(only_str , reverse);
+                
+                if(only_str.toLowerCase() === reverse.toLowerCase()){
+                    return answer;
+                }else{
+                    return "NO";
+                }
+
+            }
+            
+            //let str="found7, time: study; Yduts; emit, 7Dnuof";
+            let str="aaaa,bab: aaaA";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

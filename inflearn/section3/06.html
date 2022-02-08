@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, arr){
+                let answer = '';
+                let array = [];
+                let big = 0;
+                //console.log(big);
+                for(let i = 0; i < n; i++){
+                    let num = arr[i].toString().split('').reduce((a,b)=> parseInt(a) + parseInt(b));
+                    array.push(num);
+
+                    if(array[i] > big){
+                        big = array[i];
+                        answer = arr[i];
+                    }else if(array[i] === big){
+                        if(arr[i]>answer){
+                            answer = arr[i]
+                        }
+                    }
+                }
+                return answer;
+            }
+            
+            let arr=[128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script>
+    </body>
+</html>
+
+
+

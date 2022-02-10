@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(m, product){
+                let answer=0;
+                let sort = product.sort((a,b) => (a[0]+a[1]) - (b[0]+b[1])); //일단 금액이 작은 순으로 정렬     
+                
+                for(let i = 0; i < sort.length; i++){
+                let total_money = m - (sort[i][0]/2 + sort[i][1]); 
+                //총 예산 = 기존예산 - 할인받은 상품가격 + 배송비
+                let count = 1; //상품 몇개를 살 수 있는 지 세는 count
+                for(let j = 0; j < sort.length; j++){ 
+
+                    if(i!==j && (sort[j][0] + sort[j][1]) > total_money ){
+                    //만약 상품값+배송비가 총 예산보다 크다면 더 이상 살 수 없음을 의미하므로 가장 많은 상품 수를 return
+                    break;
+                    }
+                    if(i!==j && (sort[j][0] + sort[j][1]) <= total_money){
+                    //만약 상품값+배송비가 총 예산보다 작다면 
+                    total_money-=(sort[j][0]+sort[j][1]);
+                    //총 예산에서 상품금액 빼줌
+                    count += 1;
+                    //물건을 샀으니까(선물했으니까) count 올려줌
+                    }
+                    answer = Math.max(count);
+                }
+                }
+                return answer;
+            }
+
+            let arr=[[6, 6], [2, 2], [4, 3], [4, 5], [10, 3]];
+            console.log(solution(28, arr));
+        </script>
+    </body>
+</html>

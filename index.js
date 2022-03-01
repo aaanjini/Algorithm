@@ -1,18 +1,7 @@
 let fs = require('fs');
-const [n, ...num] = require('fs').readFileSync('example.txt').toString().trim().split(/\s+/);
+const input = require('fs').readFileSync('example.txt').toString().trim().split(' ');
 
-function solution(n, num){
-    let answer = [];
-    const arr =  num;
-    const arr2 =  arr.slice();
-    const sort = arr2.sort((a,b) => a-b);
-    
+const num1 = input[0];
+const num2 = input[1];
 
-    for(let i = 0; i < n; i++){
-        answer.push(arr.indexOf(sort[i]));
-      
-    }
-    return answer;
-}
-
-console.log(solution(n,num));
+console.log(parseInt(num1)+parseInt(num2));

@@ -1,5 +1,5 @@
 let fs = require('fs');
-const input = require('fs').readFileSync('example.txt').toString().trim().split(' ');
+const input = require('fs').readFileSync('/dev/stdin').toString().trim().split(' ');
 
 const A = parseInt(input[0]);
 const B = parseInt(input[1]);

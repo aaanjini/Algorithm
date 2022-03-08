@@ -1,6 +1,5 @@
 let fs = require('fs');
-// const [n, ...arr] = require('fs').readFileSync('example.txt').toString().trim().split('\n');
-let input = fs.readFileSync('example.txt').toString().split('\n');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
 const length = input[0];
 let array =  [];

@@ -1,17 +1,22 @@
 let fs = require('fs');
-const input = require('fs').readFileSync('/dev/stdin').toString().trim();
+const input = require('fs').readFileSync('/dev/stdin').toString().trim().split(' ').map(v => +v);;
 
-let num = parseInt(input);
-let count = 0;
+let M = input[0];
+let N = input[1];
 
-while(true){
-    if(num % 5 === 0){
-        console.log(num/5+count);
-        break;
-    }else if(num < 0 ){
-        console.log(-1);
-        break;
+
+const is_prime = (num) => {
+    if (num === 1) {
+        return false;
     }
-    num = num-3;
-    count++;
+    for (let i = 2; i <= Math.floor(Math.sqrt(num)); i++) {
+        if (num % i === 0) {
+        return false;
+        }
+    }
+    return true;
+}; 
+
+for(let i = M; i <= N; i++ ){
+    is_prime(i)?console.log(i):"";
 }

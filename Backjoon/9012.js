@@ -1,12 +1,11 @@
 const fs = require('fs');
-const [n, ...arr] = require('fs').readFileSync('example.txt').toString().trim().split('\n');
+const [n, ...arr] = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
 
 
 let answer = [];
 
 for (let i = 0; i < n; i++) {
     let count = 0;    
-    console.log(arr[i]);
 
     for(let j = 0; j < arr[i].length; j++){
       if(arr[i][j] === "("){
